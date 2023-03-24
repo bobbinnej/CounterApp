@@ -1,5 +1,7 @@
 import React, {useState} from "react";
 import useStyles from './style';
+import { Button } from "@material-ui/core";
+
 const Counter = () =>{
     const classes=useStyles();
     const [counter, setCounter] = useState(0);
@@ -13,11 +15,17 @@ const Counter = () =>{
         setCounter(0);
     }
     return(
-        <div className={classes.container}>
-            <h2>{counter}</h2>
-            <button onClick={handleIncrement}>Increase</button>
-            <button onClick={handleDecrement}>Decrease</button>
-            <button onClick={handleReset}>Reset</button>
+        <div className={classes.counter}>
+            <div >
+               <h2 className={classes.counterNumber}>{counter}</h2> 
+            </div>
+            <div className={classes.counterActions}>
+               <Button className={classes.button} variant="contained" color="primary" size="large"  onClick={handleIncrement}>Increase</Button>
+               <Button className={classes.button} variant="contained" color="secondary" size="large" onClick={handleDecrement}>Decrease</Button>
+               <Button className={classes.button} variant="contained" color="error" size="large" onClick={handleReset}>Reset</Button>
+            </div>
+           
+            
             
         </div>
     )
