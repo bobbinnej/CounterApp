@@ -1,6 +1,7 @@
 import React, {useState} from "react";
+import {Button} from '@mui/material';
 import useStyles from './style';
-import Button from '@material-ui/core/Button';
+
 
 const Counter = () =>{
     const classes=useStyles();
@@ -16,18 +17,18 @@ const Counter = () =>{
     }
     return(
         <div className={classes.counter}>
-            <div >
-               <h2 className={classes.counterNumber}>{counter}</h2> 
-            </div>
-            <div className={classes.counterActions}>
-               <Button className={classes.button} variant="contained" color="primary" size="large"  onClick={handleIncrement}>Increase</Button>
-               <Button className={classes.button} variant="contained" color="secondary" size="large" onClick={handleDecrement}>Decrease</Button>
-               <Button className={classes.button} variant="contained" color="error" size="large" onClick={handleReset}>Reset</Button>
-            </div>
-           
-            
-            
+        <div >
+           <h2 className={classes.counterNumber}>{counter}</h2> 
         </div>
+        <div className={classes.counterActions}>
+           <Button className={classes.button} variant="contained" color="primary" size="large"  onClick={handleIncrement}>Increase</Button>
+           <Button className={classes.button} variant="contained" color="secondary" size="large" onClick={handleDecrement}>Decrease</Button>
+           <Button className={classes.button} variant="contained" color="error" size="large" onClick={handleReset}>Reset</Button>
+        </div>
+       
+        
+        
+    </div>
     )
 }
 
